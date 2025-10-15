@@ -1,2 +1,4 @@
 pytubefix
 streamlit
+dotenv
+youtube_transcript_api
