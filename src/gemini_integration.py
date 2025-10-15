@@ -15,7 +15,7 @@ def summarize_video(video_url):
     
     text = " ".join([item['text'] for item in transcript])
     
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    model = genai.GenerativeModel('gemini-2.5-flash')
     
     prompt = f"Summarize this YouTube video transcript: {text}. Be the most concise you can, if you're going to display video times in the summary, please use only MM:SS"
     
