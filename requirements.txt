@@ -2,4 +2,3 @@ pytubefix
 streamlit
 dotenv
 google-genai
-youtube-transcript-api

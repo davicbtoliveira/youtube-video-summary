@@ -2,7 +2,6 @@ import os
 from dotenv import load_dotenv
 from google import genai
 from pytubefix import YouTube
-import re
 
 load_dotenv()
 api_key = os.getenv("GEMINI_API_KEY")
