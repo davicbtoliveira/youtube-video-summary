@@ -3,6 +3,8 @@ from pytubefix import YouTube
 from pytubefix.cli import on_progress
 import time
 
+from gemini_integration import summarize_video
+
 def main():
     st.title("Youtube Videos Summary App")
     st.write("Welcome to the Youtube Videos Summary application!")
@@ -10,6 +12,13 @@ def main():
     video_url = st.text_input("Enter YouTube video URL:")
     yt = YouTube(video_url, on_progress_callback=on_progress) if video_url else None
     video_title = yt.title if yt else "No video loaded"
+
+    user_language = ["English", "PT-BR", "Spanish"]
+    if 'language' not in st.session_state:
+        st.session_state.language = "English"
+
+    selected_language = st.selectbox("Select Language", user_language, index=user_language.index(st.session_state.language))
+    st.session_state.language = selected_language
 
     st.markdown("""
     <style>
@@ -57,10 +66,9 @@ def main():
             }
             </style>
             """, unsafe_allow_html=True)
-            
-            time.sleep(2)
 
-            summary_text = "This is the summary of the video. (Placeholder text)"
+            summary_text = summarize_video(video_url, selected_language)
+
             summary_placeholder.markdown(f"""
             <div style="text-align: center; margin-top: 20px; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
                 <h3>Video Summary</h3>
