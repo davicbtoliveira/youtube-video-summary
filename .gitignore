@@ -6,6 +6,9 @@
 venv/
 env/
 
+#Dev Containers
+.devcontainer/
+
 # Python cache
 __pycache__/
 *.pyc
