@@ -6,6 +6,7 @@ import time
 from gemini_integration import summarize_video
 
 def main():
+    st.set_page_config(page_title="Youtube Summarizer")
     st.title("Youtube Videos Summarizer")
     st.write("Welcome to the Youtube Videos Summarizer!")
 
