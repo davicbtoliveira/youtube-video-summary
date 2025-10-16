@@ -6,8 +6,8 @@ import time
 from gemini_integration import summarize_video
 
 def main():
-    st.title("Youtube Videos Summary App")
-    st.write("Welcome to the Youtube Videos Summary application!")
+    st.title("Youtube Videos Summarizer")
+    st.write("Welcome to the Youtube Videos Summarizer!")
 
     video_url = st.text_input("Enter YouTube video URL:")
     yt = YouTube(video_url, on_progress_callback=on_progress) if video_url else None
