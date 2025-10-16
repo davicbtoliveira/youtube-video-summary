@@ -1,4 +1,4 @@
 pytubefix
 streamlit
-dotenv
+python-dotenv
 google-genai
